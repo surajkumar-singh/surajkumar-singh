@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket = "suraj-bucket-test-demo"
-    prefix = "gcp/env/pilot/global/projects/demo5"
+    bucket = "sf-terraform-state-us-est4-01-gcs"
+    prefix = "gcp/env/pilot/global/projects/prod"
   }
 }

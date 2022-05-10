@@ -1,13 +1,6 @@
-#terraform {
-  /*backend "gcs" {
-    bucket = "hello-12345"
-  }*/
 terraform {
-  cloud {
-    organization = "hello1"
-
-    workspaces {
-      name = "suraj-demo"
-    }
+  backend "gcs" {
+    bucket = "sf-terraform-state-us-est4-01-gcs"
+    prefix = "gcp/env/infra/global/networking/vpc_subnets"
   }
 }

@@ -1,7 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket = "hello-12345"
-    prefix = "gcp/env/pilot/global/networking/firewall_rules"
+    bucket = "sf-terraform-state-us-est4-01-gcs"
+    prefix = "gcp/env/infra/global/networking/firewall_rules"
   }
 }
-

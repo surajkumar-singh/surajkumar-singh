@@ -1,7 +1,7 @@
 terraform {
   backend "gcs" {
-    bucket = "hello-12345"
-    prefix = "gcp/env/pilot/regions/us-east4/cloud-dns1"
+    bucket = "sf-terraform-state-us-est4-01-gcs"
+    prefix = "gcp/env/infra/regions/us-east4/cloud-dns"
   }
 }
 

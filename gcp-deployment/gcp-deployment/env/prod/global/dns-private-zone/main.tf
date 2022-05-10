@@ -23,38 +23,6 @@
 
   private_visibility_config_networks = var.network_self_links-main
  }
-module "dns-private-zone-vault" {
-  source     = "../../../../modules/cloud-dns"
-  project_id = var.project_id
-  type       = "private"
-  name       = var.name-vault
-  domain     = var.domain
-  labels     = var.labels-vault
-
-  private_visibility_config_networks = var.network_self_links-vault
-}
-
-  module "dns-private-zone-tools" {
-  source     = "../../../../modules/cloud-dns"
-  project_id = var.project_id
-  type       = "private"
-  name       = var.name-tools
-  domain     = var.domain
-  labels     = var.labels-tools
-
-  private_visibility_config_networks = var.network_self_links-tools
-  }
-  module "dns-private-zone-sec" {
-  source     = "../../../../modules/cloud-dns"
-  project_id = var.project_id
-  type       = "private"
-  name       = var.name-sec
-  domain     = var.domain
-  labels     = var.labels-sec
-
-  private_visibility_config_networks = var.network_self_links-sec
-  }
-
  /* recordsets = [
     {
       name = "ns"

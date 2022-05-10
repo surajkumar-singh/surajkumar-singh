@@ -1,5 +1,5 @@
 /* GLOBAL */
-project_id = "searce-playground-v1"
+project_id = ""
 region = "us-east4"
 
 /* Subnets */

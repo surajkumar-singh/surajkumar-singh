@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket = "suraj-bucket-test-demo"
+    bucket = "sf-terraform-state-us-est4-01-gcs"
     prefix = "gcp/env/pilot/global/service_accounts"
   }
 }

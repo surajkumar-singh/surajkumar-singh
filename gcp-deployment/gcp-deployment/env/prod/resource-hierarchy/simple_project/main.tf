@@ -21,7 +21,7 @@ module "project-factory" {
   project_id               = var.project_id
   org_id                   = var.organization_id
   billing_account          = var.billing_account
-  #folder_id               = var.folder_id
+  folder_id                = "832744948058"
   labels                   = var.labels
   #default_service_account = "deprivilege"
   create_project_sa        = false
