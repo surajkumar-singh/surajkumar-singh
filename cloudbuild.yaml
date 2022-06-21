@@ -1,16 +1,16 @@
 steps:
   # build the container image
 - name: "gcr.io/cloud-builders/docker"
-  args: ["build", "-t", "gcr.io/searce-playground-v1/apache:V1", "."]
+  args: ["build", "-t", "gcr.io/searce-playground-v1/apache:V2", "."]
   # push container image
 - name: "gcr.io/cloud-builders/docker"
-  args: ["push", "gcr.io/searce-playground-v1/apache:V1"]
+  args: ["push", "gcr.io/searce-playground-v1/apache:V2"]
   # deploy container image to GKE
 - name: "gcr.io/cloud-builders/gke-deploy"
   args:
   - run
   - --filename=deployment.yaml
-  - --image=gcr.io/searce-playground-v1/apache:V1
+  - --image=gcr.io/searce-playground-v1/apache:V2
   - --location=us-central1
   - --cluster=cluster-1-private
 - name: 'gcr.io/cloud-builders/kubectl'
