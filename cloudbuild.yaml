@@ -1,31 +1,8 @@
 steps:
-- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-  id: 'Authorize Cloud Build'
-  entrypoint: 'bash'
-  args:
-    - -c
-    - |
-      apt-get install dnsutils -y &&
-      cloudbuild_external_ip=$(dig @resolver4.opendns.com myip.opendns.com +short) &&
-      gcloud container clusters update  --zone=$_ZONE --enable-master-authorized-networks --master-authorized-networks $cloudbuild_external_ip/32 &&
-      echo $cloudbuild_external_ip
   # build the container image
 - name: "gcr.io/cloud-builders/docker"
-  args: ["build", "-t", "gcr.io/suraj-demo-project/apache:V1", "."]
+  args: ["build", "-t", "gcr.io/searce-playground-v1/apache:V1", "."]
   # push container image
 - name: "gcr.io/cloud-builders/docker"
-  args: ["push", "gcr.io/suraj-demo-project/apache:V1"]
-  # deploy container image to GKE
-- name: "gcr.io/cloud-builders/gke-deploy"
-  args:
-  - run
-  - --filename=deployment.yaml
-  - --image=gcr.io/suraj-demo-project/apache:V1
-  - --location=
-  - --cluster=awasthi-cluster
-- name: 'gcr.io/cloud-builders/kubectl'
-  id: Deploy service.yaml
-  args: ['apply' , '-f' , 'service.yaml']
-  env:
-  - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
-  - 'CLOUDSDK_CONTAINER_CLUSTER=awasthi-cluster'
+  args: ["push", "gcr.io/searce-playground-v1/apache:V1"]
+  
